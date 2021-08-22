@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AndroidDBModelStoreContainer" CdmEntityContainer="AndroidDBEntities">
+    <EntitySetMapping Name="clients">
+      <EntityTypeMapping TypeName="AndroidDBModel.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+          <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+          <ScalarProperty Name="C_Email" ColumnName="C_Email" />
+          <ScalarProperty Name="C_Password" ColumnName="C_Password" />
+          <ScalarProperty Name="C_Phone" ColumnName="C_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_Creator">
+      <EntityTypeMapping TypeName="AndroidDBModel.Event_Creator">
+        <MappingFragment StoreEntitySet="Event_Creator">
+          <ScalarProperty Name="Ev_Id" ColumnName="Ev_Id" />
+          <ScalarProperty Name="Ev_Name" ColumnName="Ev_Name" />
+          <ScalarProperty Name="Total_Members" ColumnName="Total_Members" />
+          <ScalarProperty Name="Venue" ColumnName="Venue" />
+          <ScalarProperty Name="DressCode" ColumnName="DressCode" />
+          <ScalarProperty Name="Event_Organizer_Name" ColumnName="Event_Organizer_Name" />
+          <ScalarProperty Name="Event_Organizer_Email" ColumnName="Event_Organizer_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invitation_Member">
+      <EntityTypeMapping TypeName="AndroidDBModel.Invitation_Member">
+        <MappingFragment StoreEntitySet="Invitation_Member">
+          <ScalarProperty Name="Event_Organizer_Name" ColumnName="Event_Organizer_Name" />
+          <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Member_Phone" ColumnName="Member_Phone" />
+          <ScalarProperty Name="Ev_Name" ColumnName="Ev_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu_Category">
+      <EntityTypeMapping TypeName="AndroidDBModel.Menu_Category">
+        <MappingFragment StoreEntitySet="Menu_Category">
+          <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+          <ScalarProperty Name="Event_Name" ColumnName="Event_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu_Selection">
+      <EntityTypeMapping TypeName="AndroidDBModel.Menu_Selection">
+        <MappingFragment StoreEntitySet="Menu_Selection">
+          <ScalarProperty Name="Event_Organizer_Name" ColumnName="Event_Organizer_Name" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+          <ScalarProperty Name="Event_Name" ColumnName="Event_Name" />
+          <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

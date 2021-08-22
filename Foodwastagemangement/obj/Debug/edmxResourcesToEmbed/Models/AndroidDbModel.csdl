@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AndroidDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="C_Id" />
+    </Key>
+    <Property Name="C_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Event_Creator">
+    <Key>
+      <PropertyRef Name="Ev_Id" />
+    </Key>
+    <Property Name="Ev_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ev_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Members" Type="Int32" />
+    <Property Name="Venue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DressCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Organizer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Organizer_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Invitation_Member">
+    <Key>
+      <PropertyRef Name="Member_Id" />
+    </Key>
+    <Property Name="Member_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Member_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ev_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Organizer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Menu_Category">
+    <Key>
+      <PropertyRef Name="Cat_Id" />
+    </Key>
+    <Property Name="Cat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="AndroidDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="clients" EntityType="Self.client" />
+    <EntitySet Name="Event_Creator" EntityType="Self.Event_Creator" />
+    <EntitySet Name="Invitation_Member" EntityType="Self.Invitation_Member" />
+    <EntitySet Name="Menu_Category" EntityType="Self.Menu_Category" />
+    <EntitySet Name="Menu_Selection" EntityType="AndroidDBModel.Menu_Selection" />
+  </EntityContainer>
+  <EntityType Name="Menu_Selection">
+    <Key>
+      <PropertyRef Name="S_Id" />
+    </Key>
+    <Property Name="S_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Event_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Member_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Organizer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

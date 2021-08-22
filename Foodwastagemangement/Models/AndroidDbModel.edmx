@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AndroidDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="C_Id" />
+          </Key>
+          <Property Name="C_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="C_Name" Type="varchar" MaxLength="50" />
+          <Property Name="C_Email" Type="varchar" MaxLength="50" />
+          <Property Name="C_Password" Type="varchar" MaxLength="50" />
+          <Property Name="C_Phone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Event_Creator">
+          <Key>
+            <PropertyRef Name="Ev_Id" />
+          </Key>
+          <Property Name="Ev_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ev_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Total_Members" Type="int" />
+          <Property Name="Venue" Type="varchar" MaxLength="50" />
+          <Property Name="DressCode" Type="varchar" MaxLength="50" />
+          <Property Name="Event_Organizer_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Event_Organizer_Email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Invitation_Member">
+          <Key>
+            <PropertyRef Name="Member_Id" />
+          </Key>
+          <Property Name="Member_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Member_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Member_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Ev_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Event_Organizer_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Menu_Category">
+          <Key>
+            <PropertyRef Name="Cat_Id" />
+          </Key>
+          <Property Name="Cat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cat_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Event_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Menu_Selection">
+          <Key>
+            <PropertyRef Name="S_Id" />
+          </Key>
+          <Property Name="S_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Event_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Cat_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Member_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Event_Organizer_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="AndroidDBModelStoreContainer">
+          <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event_Creator" EntityType="Self.Event_Creator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invitation_Member" EntityType="Self.Invitation_Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu_Category" EntityType="Self.Menu_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu_Selection" EntityType="Self.Menu_Selection" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AndroidDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="C_Id" />
+          </Key>
+          <Property Name="C_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Event_Creator">
+          <Key>
+            <PropertyRef Name="Ev_Id" />
+          </Key>
+          <Property Name="Ev_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ev_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Members" Type="Int32" />
+          <Property Name="Venue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DressCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Event_Organizer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Event_Organizer_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Invitation_Member">
+          <Key>
+            <PropertyRef Name="Member_Id" />
+          </Key>
+          <Property Name="Member_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Member_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ev_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Event_Organizer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Menu_Category">
+          <Key>
+            <PropertyRef Name="Cat_Id" />
+          </Key>
+          <Property Name="Cat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Event_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AndroidDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="clients" EntityType="Self.client" />
+          <EntitySet Name="Event_Creator" EntityType="Self.Event_Creator" />
+          <EntitySet Name="Invitation_Member" EntityType="Self.Invitation_Member" />
+          <EntitySet Name="Menu_Category" EntityType="Self.Menu_Category" />
+          <EntitySet Name="Menu_Selection" EntityType="AndroidDBModel.Menu_Selection" />
+        </EntityContainer>
+        <EntityType Name="Menu_Selection">
+          <Key>
+            <PropertyRef Name="S_Id" />
+          </Key>
+          <Property Name="S_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Event_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Member_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Event_Organizer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AndroidDBModelStoreContainer" CdmEntityContainer="AndroidDBEntities">
+          <EntitySetMapping Name="clients">
+            <EntityTypeMapping TypeName="AndroidDBModel.client">
+              <MappingFragment StoreEntitySet="client">
+                <ScalarProperty Name="C_Id" ColumnName="C_Id" />
+                <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+                <ScalarProperty Name="C_Email" ColumnName="C_Email" />
+                <ScalarProperty Name="C_Password" ColumnName="C_Password" />
+                <ScalarProperty Name="C_Phone" ColumnName="C_Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_Creator">
+            <EntityTypeMapping TypeName="AndroidDBModel.Event_Creator">
+              <MappingFragment StoreEntitySet="Event_Creator">
+                <ScalarProperty Name="Ev_Id" ColumnName="Ev_Id" />
+                <ScalarProperty Name="Ev_Name" ColumnName="Ev_Name" />
+                <ScalarProperty Name="Total_Members" ColumnName="Total_Members" />
+                <ScalarProperty Name="Venue" ColumnName="Venue" />
+                <ScalarProperty Name="DressCode" ColumnName="DressCode" />
+                <ScalarProperty Name="Event_Organizer_Name" ColumnName="Event_Organizer_Name" />
+                <ScalarProperty Name="Event_Organizer_Email" ColumnName="Event_Organizer_Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invitation_Member">
+            <EntityTypeMapping TypeName="AndroidDBModel.Invitation_Member">
+              <MappingFragment StoreEntitySet="Invitation_Member">
+                <ScalarProperty Name="Event_Organizer_Name" ColumnName="Event_Organizer_Name" />
+                <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
+                <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+                <ScalarProperty Name="Member_Phone" ColumnName="Member_Phone" />
+                <ScalarProperty Name="Ev_Name" ColumnName="Ev_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu_Category">
+            <EntityTypeMapping TypeName="AndroidDBModel.Menu_Category">
+              <MappingFragment StoreEntitySet="Menu_Category">
+                <ScalarProperty Name="Cat_Id" ColumnName="Cat_Id" />
+                <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+                <ScalarProperty Name="Event_Name" ColumnName="Event_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu_Selection">
+            <EntityTypeMapping TypeName="AndroidDBModel.Menu_Selection">
+              <MappingFragment StoreEntitySet="Menu_Selection">
+                <ScalarProperty Name="Event_Organizer_Name" ColumnName="Event_Organizer_Name" />
+                <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+                <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+                <ScalarProperty Name="Event_Name" ColumnName="Event_Name" />
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,66 @@
+﻿@model Foodwastagemangement.Models.Event_Creator
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event_Creator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ev_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ev_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Members)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Members)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Venue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Venue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DressCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DressCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event_Organizer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event_Organizer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event_Organizer_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event_Organizer_Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ev_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

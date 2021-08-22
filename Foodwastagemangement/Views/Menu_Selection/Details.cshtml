@@ -1,0 +1,50 @@
+﻿@model Foodwastagemangement.Models.Menu_Selection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menu_Selection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Event_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cat_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cat_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event_Organizer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event_Organizer_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.S_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AndroidDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="C_Id" />
+    </Key>
+    <Property Name="C_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C_Name" Type="varchar" MaxLength="50" />
+    <Property Name="C_Email" Type="varchar" MaxLength="50" />
+    <Property Name="C_Password" Type="varchar" MaxLength="50" />
+    <Property Name="C_Phone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Event_Creator">
+    <Key>
+      <PropertyRef Name="Ev_Id" />
+    </Key>
+    <Property Name="Ev_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ev_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Total_Members" Type="int" />
+    <Property Name="Venue" Type="varchar" MaxLength="50" />
+    <Property Name="DressCode" Type="varchar" MaxLength="50" />
+    <Property Name="Event_Organizer_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Event_Organizer_Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Invitation_Member">
+    <Key>
+      <PropertyRef Name="Member_Id" />
+    </Key>
+    <Property Name="Member_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Member_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Member_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Ev_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Event_Organizer_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Menu_Category">
+    <Key>
+      <PropertyRef Name="Cat_Id" />
+    </Key>
+    <Property Name="Cat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cat_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Event_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Menu_Selection">
+    <Key>
+      <PropertyRef Name="S_Id" />
+    </Key>
+    <Property Name="S_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Event_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Cat_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Member_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Event_Organizer_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="AndroidDBModelStoreContainer">
+    <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_Creator" EntityType="Self.Event_Creator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invitation_Member" EntityType="Self.Invitation_Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu_Category" EntityType="Self.Menu_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu_Selection" EntityType="Self.Menu_Selection" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

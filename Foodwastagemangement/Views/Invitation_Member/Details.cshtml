@@ -1,0 +1,42 @@
+﻿@model Foodwastagemangement.Models.Invitation_Member
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invitation_Member</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ev_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ev_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Member_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
